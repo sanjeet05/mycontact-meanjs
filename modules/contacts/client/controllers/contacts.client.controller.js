@@ -11,43 +11,60 @@
   function ContactsController ($scope, $state, $window, Authentication, contact) {
     var vm = this;
 
-    vm.authentication = Authentication;
-    vm.contact = contact;
-    vm.error = null;
-    vm.form = {};
-    vm.remove = remove;
-    vm.save = save;
+    // vm.authentication = Authentication;
+    // vm.contact = contact;
+    // vm.error = null;
+    // vm.form = {};
+    // vm.remove = remove;
+    // vm.save = save;
+    $scope.authentication = Authentication;
+    $scope.contact={};
+    $scope.error = null;
 
     // Remove existing Contact
-    function remove() {
+    $scope.remove=function() {
       if ($window.confirm('Are you sure you want to delete?')) {
-        vm.contact.$remove($state.go('contacts.list'));
+        contact.$remove($state.go('contacts.list'));
       }
     }
 
-    // Save Contact
-    function save(isValid) {
+    // Save new Contact
+    $scope.save=function(isValid) {
       if (!isValid) {
-        $scope.$broadcast('show-errors-check-validity', 'vm.form.contactForm');
+        $scope.$broadcast('show-errors-check-validity', '$scope.contactForm');
         return false;
       }
 
-      // TODO: move create/update logic to service
-      if (vm.contact._id) {
-        vm.contact.$update(successCallback, errorCallback);
-      } else {
-        vm.contact.$save(successCallback, errorCallback);
-      }
+      contact.$save(successCallback, errorCallback);
 
       function successCallback(res) {
         $state.go('contacts.view', {
           contactId: res._id
         });
       }
-
       function errorCallback(res) {
-        vm.error = res.data.message;
+        $scope.error = res.data.message;
       }
     }
+
+    // Update Contact
+    $scope.update=function(isValid) {
+        if (!isValid) {
+          $scope.$broadcast('show-errors-check-validity', '$scope.contactForm');
+          return false;
+      }
+      if (vm.contact._id) {
+        contact.$update(successCallback, errorCallback);
+      }
+      function successCallback(res) {
+        $state.go('contacts.view', {
+          contactId: res._id
+        });
+      }
+      function errorCallback(res) {
+        $scope.error = res.data.message;
+      }
+    }
+
   }
 }());
