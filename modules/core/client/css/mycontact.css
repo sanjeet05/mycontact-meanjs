@@ -1,0 +1,102 @@
+/*** === Generic CSS for all === ***/
+/*body {font-family: "Helvetica Neue", ​Helvetica, ​Arial, ​sans-serif !important;}*/
+.ml_margin_all_0{margin: 0px;}
+.ml_margin_all_10{margin: 10px;}
+.ml_margin_all_15{margin: 15px;}
+.ml_margin_all_20{margin: 20px;}
+
+.ml_margin_left_10{margin-left: 10px;}
+.ml_margin_right_10{margin-right: 10px;}
+.ml_margin_top_10{margin-top: 10px;}
+.ml_margin_bottom_10{margin-bottom: 10px;}
+
+.ml_margin_left_15{margin-left: 15px;}
+.ml_margin_right_15{margin-right: 15px;}
+.ml_margin_top_15{margin-top: 15px;}
+.ml_margin_bottom_15{margin-bottom: 15px;}
+
+.ml_margin_left_20{margin-left: 20px;}
+.ml_margin_right_20{margin-right: 20px;}
+.ml_margin_top_20{margin-top: 20px;}
+.ml_margin_bottom_20{margin-bottom: 20px;}
+
+.ml_margin_top_30{margin-top: 30px;}
+.ml_margin_top_40{margin-top: 40px;}
+.ml_margin_top_50{margin-top: 50px;}
+.ml_margin_top_60{margin-top: 60px;}
+.ml_margin_top_70{margin-top: 70px;}
+.ml_margin_top_80{margin-top: 80px;}
+.ml_margin_top_90{margin-top: 90px;}
+.ml_margin_top_100{margin-top: 100px;}
+
+.ml_padding_all_0{padding: 0px;}
+.ml_padding_all_10{padding: 10px;}
+.ml_padding_all_15{padding: 15px;}
+.ml_padding_all_20{padding: 20px;}
+
+.ml_padding_left_10{padding-left: 10px;}
+.ml_padding_right_10{padding-right: 10px;}
+.ml_padding_top_10{padding-top: 10px;}
+.ml_padding_bottom_10{padding-bottom: 10px;}
+
+.ml_padding_left_15{padding-left: 15px;}
+.ml_padding_right_15{padding-right: 15px;}
+.ml_padding_top_15{padding-top: 15px;}
+.ml_padding_bottom_15{padding-bottom: 15px;}
+
+.ml_padding_left_20{padding-left: 20px;}
+.ml_padding_right_20{padding-right: 20px;}
+.ml_padding_top_20{padding-top: 20px;}
+.ml_padding_bottom_20{padding-bottom: 20px;}
+
+.ml_width_25{width: 25%;}
+.ml_width_50{width: 50%;}
+.ml_width_75{width: 75%;}
+.ml_width_100{width: 100%;}
+
+.ml_color_white{background-color: #fff;}
+.ml_color_green {background-color: #c4d600;}
+.ml_color_yellow {background-color: #ffc845;}
+.ml_color_blue {background-color: #0d9ddb;}
+.ml_color_orange {background-color: #F8992D;}
+.ml_color_lightgrey {background-color: #f4f5f6;}
+
+.ml_font_lighter{font-weight: lighter;}
+.ml_text_center {text-align: center;}
+.ml_text_right {text-align: right;}
+.ml_vertical_center{position: absolute; top: 30%;}
+.ml_no_space{white-space:nowrap;}
+
+.ml_full_image{max-width: 100%; height: auto;}
+.ml_line_separator{height:1px;background:#FFFFFF;border-bottom:1px solid #cdcdcd;}
+
+.ml_main_container {margin-left: auto; margin-right: auto; min-height: 250px;padding: 15px; overflow: hidden;}
+.ml_clearfix {clear: both;}
+.ml_content_title{background: rgba(0, 0, 0, 0.5); padding-left: 5px; padding-right: 5px; color: #FFF; line-height: 1.5em;}
+
+/*** === Generic CSS for all ends === ***/
+
+
+.table tr>td.mymiddle{
+	vertical-align: middle;
+}
+.media{
+	padding: 10px 0;
+  margin-bottom: 10px;
+}
+.media-heading{
+	color: #dd5638;
+}
+.media-body{
+	padding-top: 15px;
+  margin-left: 20px;
+}
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
