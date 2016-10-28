@@ -6,9 +6,9 @@
     .module('contacts')
     .controller('ContactsController', ContactsController);
 
-  ContactsController.$inject = ['$scope', '$state', '$window', 'Authentication', 'contactResolve'];
+  ContactsController.$inject = ['$scope', '$state', '$window', 'Authentication', 'contactResolve','FamilyGroupService'];
 
-  function ContactsController ($scope, $state, $window, Authentication, contact) {
+  function ContactsController ($scope, $state, $window, Authentication, contact, FamilyGroupService) {
     var vm = this;
 
     // vm.authentication = Authentication;
@@ -20,6 +20,12 @@
     $scope.authentication = Authentication;
     $scope.contact={};
     $scope.error = null;
+
+    $scope.initContact=function(){
+      $scope.familyGroups=FamilyGroupService.familyGroups();
+      // $scope.selectedName =   $scope.familyGroups[0];
+      console.log($scope.familyGroups);
+    }
 
     // Remove existing Contact
     $scope.remove=function() {
@@ -34,8 +40,9 @@
         $scope.$broadcast('show-errors-check-validity', '$scope.contactForm');
         return false;
       }
+      console.log($scope.contact);
 
-      contact.$save(successCallback, errorCallback);
+      // contact.$save(successCallback, errorCallback);
 
       function successCallback(res) {
         $state.go('contacts.view', {

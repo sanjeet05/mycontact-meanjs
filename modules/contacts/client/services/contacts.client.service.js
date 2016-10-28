@@ -4,7 +4,8 @@
 
   angular
     .module('contacts')
-    .factory('ContactsService', ContactsService);
+    .factory('ContactsService', ContactsService)
+    .factory('FamilyGroupService', FamilyGroupService);
 
   ContactsService.$inject = ['$resource'];
 
@@ -14,7 +15,16 @@
     }, {
       update: {
         method: 'PUT'
-      }
+      },
     });
   }
+
+  function FamilyGroupService() {
+    function familyGroups(){
+      var groups=[{'displayName':'Family','key':'family'},{'displayName':'Friends', 'key':'friends'},{'displayName':'Others', 'key':'others'}];
+      return groups;
+    }
+    return {familyGroups:familyGroups};
+  }
+
 }());
