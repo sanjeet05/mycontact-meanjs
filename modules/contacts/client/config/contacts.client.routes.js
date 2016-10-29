@@ -18,7 +18,7 @@
         url: '',
         templateUrl: 'modules/contacts/client/views/list-contacts.client.view.html',
         controller: 'ContactsListController',
-        controllerAs: 'vm',
+        // controllerAs: 'vm',
         data: {
           pageTitle: 'Contacts List'
         }
@@ -27,7 +27,7 @@
         url: '/create',
         templateUrl: 'modules/contacts/client/views/add-contact.client.view.html',
         controller: 'ContactsController',
-        controllerAs: 'vm',
+        // controllerAs: 'vm',
         resolve: {
           contactResolve: newContact
         },
@@ -40,7 +40,7 @@
         url: '/:contactId/edit',
         templateUrl: 'modules/contacts/client/views/form-contact.client.view.html',
         controller: 'ContactsController',
-        controllerAs: 'vm',
+        // controllerAs: 'vm',
         resolve: {
           contactResolve: getContact
         },
@@ -53,7 +53,7 @@
         url: '/:contactId',
         templateUrl: 'modules/contacts/client/views/view-contact.client.view.html',
         controller: 'ContactsController',
-        controllerAs: 'vm',
+        // controllerAs: 'vm',
         resolve: {
           contactResolve: getContact
         },

@@ -9,11 +9,53 @@ var mongoose = require('mongoose'),
 /**
  * Contact Schema
  */
+// var ContactSchema = new Schema({
+//   name: {
+//     type: String,
+//     default: '',
+//     required: 'Please fill Contact name',
+//     trim: true
+//   },
+//   created: {
+//     type: Date,
+//     default: Date.now
+//   },
+//   user: {
+//     type: Schema.ObjectId,
+//     ref: 'User'
+//   }
+// });
+
 var ContactSchema = new Schema({
   name: {
     type: String,
     default: '',
     required: 'Please fill Contact name',
+    trim: true
+  },
+  company: {
+    type: String,
+    default: '',
+    trim: true
+  },
+  email: {
+    type: String,
+    default: '',
+    trim: true
+  },
+  mobile: {
+    type: String,
+    default: '',
+    trim: true
+  },
+  address: {
+    type: String,
+    default: '',
+    trim: true
+  },
+  group_name: {
+    type: String,
+    default: '',
     trim: true
   },
   created: {
@@ -25,5 +67,6 @@ var ContactSchema = new Schema({
     ref: 'User'
   }
 });
+
 
 mongoose.model('Contact', ContactSchema);

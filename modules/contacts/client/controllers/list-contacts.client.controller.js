@@ -5,11 +5,18 @@
     .module('contacts')
     .controller('ContactsListController', ContactsListController);
 
-  ContactsListController.$inject = ['ContactsService'];
+  ContactsListController.$inject = ['$scope','$state', '$window', 'ContactsService'];
 
-  function ContactsListController(ContactsService) {
-    var vm = this;
+  function ContactsListController($scope, $state, $window, ContactsService) {
 
-    vm.contacts = ContactsService.query();
+    $scope.contacts = ContactsService.query();
+    console.log($scope.contacts);
+
+    $scope.remove=function() {
+      console.log("hi");
+      if ($window.confirm('Are you sure you want to delete?')) {
+        ContactsService.$remove($state.go('contacts.list'));
+      }
+    }
   }
 }());

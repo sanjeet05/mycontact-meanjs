@@ -34,7 +34,7 @@
   <div class="row">
     <div class="col-md-3">
       <div class="list-group">
-        <a href="contacts.list" class="list-group-item active">All Contact <span class="badge"> 10 </span>  </a>
+        <a ui-sref="contacts.list" class="list-group-item active">All Contact <span class="badge"> 10 </span>  </a>
         <a href="#" class="list-group-item">Family <span class="badge"> 4 </span> </a>
         <a href="#" class="list-group-item">Friends <span class="badge"> 3 </span> </a>
         <a href="#" class="list-group-item">Others <span class="badge"> 5 </span> </a>
@@ -45,14 +45,14 @@
 
       <div class="panel panel-default">
         <table class="table">
-          <tr>
+          <tr ng-repeat="contact in contacts">
             <td>
               <div class="media">
                 <div class="media-body">
-                  <h4 class="media-heading">Contact 1</h4>
+                  <h4 class="media-heading">{{contact.name}}</h4>
                   <address>
-                    <strong>Job</strong><br>
-                    contact1@sample.com
+                    <strong>{{contact.company}}</strong><br>
+                    {{contact.address}}
                   </address>
                 </div>
               </div>
@@ -61,32 +61,12 @@
               <a href="#" class="btn btn-circle btn-default btn-xs" title="Edit" >
                 <i class="glyphicon glyphicon-edit"></i>
               </a>
-              <a href="#" class="btn btn-circle btn-danger btn-xs" title="Remove" >
+              <a class="btn btn-circle btn-danger btn-xs" title="Remove" ng-click="remove()">
                 <i class="glyphicon glyphicon-remove"></i>
               </a>
             </td>
           </tr>
-          <tr>
-            <td>
-              <div class="media">
-                <div class="media-body">
-                  <h4 class="media-heading">Contact 2</h4>
-                  <address>
-                    <strong>Job 2</strong><br>
-                    contact2@sample.com
-                  </address>
-                </div>
-              </div>
-            </td>
-            <td width="100px" class="mymiddle">
-              <a href="#" class="btn btn-circle btn-default btn-xs" title="Edit" >
-                <i class="glyphicon glyphicon-edit"></i>
-              </a>
-              <a href="#" class="btn btn-circle btn-danger btn-xs" title="Remove" >
-                <i class="glyphicon glyphicon-remove"></i>
-              </a>
-            </td>
-          </tr>
+
         </table>
       </div>
 

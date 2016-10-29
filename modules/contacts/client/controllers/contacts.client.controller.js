@@ -9,7 +9,7 @@
   ContactsController.$inject = ['$scope', '$state', '$window', 'Authentication', 'contactResolve','FamilyGroupService'];
 
   function ContactsController ($scope, $state, $window, Authentication, contact, FamilyGroupService) {
-    var vm = this;
+    // var vm = this;
 
     // vm.authentication = Authentication;
     // vm.contact = contact;
@@ -18,21 +18,21 @@
     // vm.remove = remove;
     // vm.save = save;
     $scope.authentication = Authentication;
-    $scope.contact={};
-    $scope.error = null;
+    $scope.contact = contact;
 
     $scope.initContact=function(){
       $scope.familyGroups=FamilyGroupService.familyGroups();
       // $scope.selectedName =   $scope.familyGroups[0];
-      console.log($scope.familyGroups);
+      // console.log($scope.familyGroups);
     }
 
     // Remove existing Contact
-    $scope.remove=function() {
-      if ($window.confirm('Are you sure you want to delete?')) {
-        contact.$remove($state.go('contacts.list'));
-      }
-    }
+    // $scope.remove=function() {
+    //   console.log("hi");
+    //   if ($window.confirm('Are you sure you want to delete?')) {
+    //     contact.$remove($state.go('contacts.list'));
+    //   }
+    // }
 
     // Save new Contact
     $scope.save=function(isValid) {
@@ -40,12 +40,11 @@
         $scope.$broadcast('show-errors-check-validity', '$scope.contactForm');
         return false;
       }
-      console.log($scope.contact);
-
-      // contact.$save(successCallback, errorCallback);
+      // console.log($scope.contact);
+      contact.$save(successCallback, errorCallback);
 
       function successCallback(res) {
-        $state.go('contacts.view', {
+        $state.go('contacts.list', {
           contactId: res._id
         });
       }
