@@ -58,12 +58,15 @@
               </div>
             </td>
             <td width="100px" class="mymiddle">
-              <a href="#" class="btn btn-circle btn-default btn-xs" title="Edit" >
+              <a ui-sref="contacts.view({ contactId: contact._id })" class="btn btn-circle btn-default btn-xs" title="View Details" >
+                <i class="glyphicon glyphicon-eye-open"></i>
+              </a>
+              <!-- <a href="#" class="btn btn-circle btn-default btn-xs" title="Edit" >
                 <i class="glyphicon glyphicon-edit"></i>
               </a>
               <a class="btn btn-circle btn-danger btn-xs" title="Remove" ng-click="remove()">
                 <i class="glyphicon glyphicon-remove"></i>
-              </a>
+              </a> -->
             </td>
           </tr>
 

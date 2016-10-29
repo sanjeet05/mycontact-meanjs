@@ -27,12 +27,11 @@
     }
 
     // Remove existing Contact
-    // $scope.remove=function() {
-    //   console.log("hi");
-    //   if ($window.confirm('Are you sure you want to delete?')) {
-    //     contact.$remove($state.go('contacts.list'));
-    //   }
-    // }
+    $scope.remove=function() {
+      if ($window.confirm('Are you sure you want to delete?')) {
+        contact.$remove($state.go('contacts.list'));
+      }
+    }
 
     // Save new Contact
     $scope.save=function(isValid) {
@@ -59,7 +58,7 @@
           $scope.$broadcast('show-errors-check-validity', '$scope.contactForm');
           return false;
       }
-      if (vm.contact._id) {
+      if (contact._id) {
         contact.$update(successCallback, errorCallback);
       }
       function successCallback(res) {

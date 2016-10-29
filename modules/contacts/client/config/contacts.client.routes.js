@@ -19,7 +19,11 @@
         templateUrl: 'modules/contacts/client/views/list-contacts.client.view.html',
         controller: 'ContactsListController',
         // controllerAs: 'vm',
+        // resolve: {
+        //   contactResolve: newContact
+        // },
         data: {
+          // roles: ['user', 'admin'],
           pageTitle: 'Contacts List'
         }
       })
@@ -38,7 +42,7 @@
       })
       .state('contacts.edit', {
         url: '/:contactId/edit',
-        templateUrl: 'modules/contacts/client/views/form-contact.client.view.html',
+        templateUrl: 'modules/contacts/client/views/edit-contact.client.view.html',
         controller: 'ContactsController',
         // controllerAs: 'vm',
         resolve: {
@@ -55,6 +59,7 @@
         controller: 'ContactsController',
         // controllerAs: 'vm',
         resolve: {
+          // roles: ['user', 'admin'],
           contactResolve: getContact
         },
         data: {
