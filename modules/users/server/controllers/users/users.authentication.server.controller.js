@@ -80,7 +80,8 @@ exports.signin = function (req, res, next) {
  */
 exports.signout = function (req, res) {
   req.logout();
-  res.redirect('/');
+  // res.redirect('/');
+  res.redirect('/authentication/signin');
 };
 
 /**
@@ -119,7 +120,7 @@ exports.oauthCallback = function (strategy) {
           return res.redirect('/authentication/signin');
         }
 
-        return res.redirect(redirectURL || sessionRedirectURL || '/');
+        return res.redirect(redirectURL || sessionRedirectURL || 'contacts');
       });
     })(req, res, next);
   };

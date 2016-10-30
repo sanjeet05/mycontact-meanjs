@@ -46,6 +46,7 @@ var ContactSchema = new Schema({
   mobile: {
     type: String,
     default: '',
+    required: 'Please fill Contact number',
     trim: true
   },
   address: {

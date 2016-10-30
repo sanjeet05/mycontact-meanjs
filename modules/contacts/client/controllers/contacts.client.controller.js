@@ -19,6 +19,7 @@
     // vm.save = save;
     $scope.authentication = Authentication;
     $scope.contact = contact;
+    $scope.error = null;
 
     $scope.initContact=function(){
       $scope.familyGroups=FamilyGroupService.familyGroups();
@@ -36,7 +37,7 @@
     // Save new Contact
     $scope.save=function(isValid) {
       if (!isValid) {
-        $scope.$broadcast('show-errors-check-validity', '$scope.contactForm');
+        $scope.$broadcast('show-errors-check-validity', 'contactForm');
         return false;
       }
       // console.log($scope.contact);
@@ -55,7 +56,7 @@
     // Update Contact
     $scope.update=function(isValid) {
         if (!isValid) {
-          $scope.$broadcast('show-errors-check-validity', '$scope.contactForm');
+          $scope.$broadcast('show-errors-check-validity', 'contactForm');
           return false;
       }
       if (contact._id) {
